@@ -15,5 +15,28 @@ class TestBear < MiniTest::Test
   end
 
   def test_get_name
+    assert_equal('Bobo', @bear_1.name)
   end
+
+  def test_roar
+    assert_equal("HELLO", @bear_1.roar("Hello"))
+  end
+
+  def test_fish
+    @bear_1.fish(@river_1)
+    assert_equal(2, @river_1.fish.length)
+    assert_equal(1, @bear_1.food_count)
+  end
+
+  def test_food_count__empty
+    assert_equal(0, @bear_1.food_count)
+  end
+
+  def test_food_count__eaten
+    @bear_1.fish(@river_1)
+    @bear_1.fish(@river_1)
+    @bear_1.fish(@river_1)
+    assert_equal(3, @bear_1.food_count)
+  end
+
 end
