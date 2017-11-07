@@ -19,4 +19,5 @@ class TestRiver < MiniTest::Test
 
   def test_get_fish
     assert_equal([@fish_1, @fish_2, @fish_3], @river_1.fish)
+  end
 end
