@@ -1,7 +1,7 @@
 class Fish
   attr_reader :name
 
-  def initialize(fish_name)
+  def initialize(input_name)
     @name = input_name
   end
 
